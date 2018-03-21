@@ -1,0 +1,7 @@
+.landing-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #4a148c;
+  padding: 2rem;
+  box-sizing: border-box;
+}
