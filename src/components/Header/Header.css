@@ -1,0 +1,27 @@
+.navabar .header {
+  padding: 3rem 1rem 2rem;
+  background-color: #f2453d;
+  position: relative;
+}
+
+.navabar .header h1 {
+  margin-bottom: 0px;
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.navabar .header .total-cost {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.navabar .subheading {
+  padding: 0.5rem 1rem;
+  color: #999999 !important;
+  font-size: 24px !important;
+  font-weight: 300;
+}
