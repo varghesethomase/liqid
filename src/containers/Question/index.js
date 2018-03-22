@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import Header from '../../components/Header';
 import './Question.css';
 
 class Question extends Component {
   render() {
-    return <div />;
+    return (
+      <div className="question-view">
+        <Header />
+      </div>
+    );
   }
 }
 
