@@ -1,27 +1,47 @@
-.navabar .header {
-  padding: 3rem 1rem 2rem;
-  background-color: #f2453d;
-  position: relative;
+.navbar {
+  height: 60px;
+  background-color: #ffffff;
+  box-sizing: border-box;
 }
 
-.navabar .header h1 {
-  margin-bottom: 0px;
-  color: #ffffff;
-  font-weight: 100;
+.navbar.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
-.navabar .header .total-cost {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 300;
+.navbar .brand {
+  display: table;
+  margin: 0;
+  height: 100%;
+  padding-left: 0px;
 }
 
-.navabar .subheading {
-  padding: 0.5rem 1rem;
-  color: #999999 !important;
-  font-size: 24px !important;
-  font-weight: 300;
+.navbar .brand li {
+  display: table-cell;
+  vertical-align: middle;
+  list-style-type: none;
+  height: 100%;
+}
+
+.navbar .navigation {
+  cursor: pointer;
+  padding-left: 15px;
+}
+
+.navbar .navigation:hover {
+  background-color: #f9f9f9;
+  transition: ease 0.3s background-color;
+}
+
+.navbar .brand img {
+  display: block;
+  height: 25px;
+  margin-right: 7px;
+}
+
+.navbar .brand li.logo {
+  font-family: 'Redressed', cursive;
+  font-size: 30px;
 }
