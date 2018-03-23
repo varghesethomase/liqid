@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from '../../components/Header';
 import QuestionCard from '../../components/QuestionCard';
+import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionTypography from '../../components/QuestionTypography';
 import './Question.css';
 
@@ -13,6 +14,7 @@ class Question extends Component {
         <Header />
         <div class="question-wrapper">
           <QuestionCard>
+            <ProgressIndicator />
             <QuestionTypography />
           </QuestionCard>
         </div>
