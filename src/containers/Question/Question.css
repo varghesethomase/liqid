@@ -4,3 +4,7 @@
   overflow-y: auto;
   background-color: #4a148c;
 }
+
+.question-wrapper {
+  margin-top: 60px;
+}
