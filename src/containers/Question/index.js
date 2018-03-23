@@ -8,14 +8,23 @@ import QuestionTypography from '../../components/QuestionTypography';
 import './Question.css';
 
 class Question extends Component {
+  completedPercent = () =>
+    this.props.questionData.currentQuestion /
+    this.props.questionData.questions.length;
   render() {
+    const { questionData } = this.props;
+    console.log(questionData.questions[questionData.currentQuestion]);
     return (
       <div className="question-view">
         <Header />
-        <div class="question-wrapper">
+        <div className="question-wrapper">
           <QuestionCard>
-            <ProgressIndicator />
-            <QuestionTypography />
+            <ProgressIndicator percent={this.completedPercent} />
+            <QuestionTypography
+              text={
+                questionData.questions[questionData.currentQuestion].question
+              }
+            />
           </QuestionCard>
         </div>
       </div>
@@ -23,10 +32,12 @@ class Question extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  questionData: state.question.questionData
+});
 
 const mapDispatchToProps = dispatch => ({
-  changeSelectedCrust: value => dispatch()
+  changeQuestion: value => dispatch()
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Question);
