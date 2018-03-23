@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import QuestionCard from '../../components/QuestionCard';
 import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionTypography from '../../components/QuestionTypography';
+import AnswerField from '../../components/AnswerField';
 import './Question.css';
 
 class Question extends Component {
@@ -13,18 +14,16 @@ class Question extends Component {
     this.props.questionData.questions.length;
   render() {
     const { questionData } = this.props;
-    console.log(questionData.questions[questionData.currentQuestion]);
+    const currentQuestion =
+      questionData.questions[questionData.currentQuestion];
     return (
       <div className="question-view">
         <Header />
         <div className="question-wrapper">
           <QuestionCard>
             <ProgressIndicator percent={this.completedPercent} />
-            <QuestionTypography
-              text={
-                questionData.questions[questionData.currentQuestion].question
-              }
-            />
+            <QuestionTypography text={currentQuestion.question} />
+            <AnswerField field={currentQuestion.fieldProperties} />
           </QuestionCard>
         </div>
       </div>
