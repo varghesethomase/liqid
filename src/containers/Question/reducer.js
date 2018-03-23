@@ -5,25 +5,49 @@ const initialState = {
       {
         id: 1,
         question: 'Question 1',
-        type: '',
+        fieldProperties: {
+          type: 'text',
+          label: 'Placeholder text',
+          value: ''
+        },
         answer: ''
       },
       {
         id: 2,
         question: 'Question 2',
-        type: '',
+        fieldProperties: {
+          type: 'dropdown',
+          label: 'Placeholder text',
+          value: [
+            {
+              name: 'Alphabets',
+              value: 'az'
+            },
+            {
+              name: 'Animals',
+              value: 'mongoose'
+            }
+          ]
+        },
         answer: ''
       },
       {
         id: 3,
         question: 'Question 3',
-        type: '',
-        answer: ''
-      },
-      {
-        id: 4,
-        question: 'Question 4',
-        type: '',
+        fieldProperties: {
+          type: 'radiobutton',
+          label: 'Placeholder text',
+          value: [
+            {
+              name: 'Alphabets',
+              value: 'az'
+            },
+            {
+              name: 'Animals',
+              value: 'mongoose'
+            }
+          ]
+        },
         answer: ''
       }
     ]
