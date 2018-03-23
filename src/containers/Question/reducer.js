@@ -4,25 +4,25 @@ const initialState = {
     questions: [
       {
         id: 1,
-        question: '',
+        question: 'Question 1',
         type: '',
         answer: ''
       },
       {
         id: 2,
-        question: '',
+        question: 'Question 2',
         type: '',
         answer: ''
       },
       {
         id: 3,
-        question: '',
+        question: 'Question 3',
         type: '',
         answer: ''
       },
       {
         id: 4,
-        question: '',
+        question: 'Question 4',
         type: '',
         answer: ''
       }
