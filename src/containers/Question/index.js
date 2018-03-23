@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../../components/Header';
+import QuestionCard from '../../components/QuestionCard';
+import QuestionTypography from '../../components/QuestionTypography';
 import './Question.css';
 
 class Question extends Component {
@@ -9,6 +11,11 @@ class Question extends Component {
     return (
       <div className="question-view">
         <Header />
+        <div class="question-wrapper">
+          <QuestionCard>
+            <QuestionTypography />
+          </QuestionCard>
+        </div>
       </div>
     );
   }
