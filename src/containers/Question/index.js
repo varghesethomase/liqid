@@ -59,6 +59,7 @@ class Question extends Component {
     } else {
       this.props.history.push('/survey-success');
     }
+    this.setState({ answer: '' });
   };
 
   getCurrentQuestion = () => {
