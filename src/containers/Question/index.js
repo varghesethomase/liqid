@@ -23,13 +23,6 @@ class Question extends Component {
     this.props.history.goBack();
   };
 
-  completedPercent = () =>
-    this.props.match.params.id / this.props.questionData.questions.length;
-
-  updateAnswer = event => {
-    this.setState({ answer: event.target.value });
-  };
-
   getCurrentQuestionPosition = () => {
     let currentPosition = 0;
     const questions = this.props.questionData.questions;
@@ -42,16 +35,30 @@ class Question extends Component {
     return currentPosition;
   };
 
+  completedPercent = () =>
+    this.getCurrentQuestionPosition() /
+    this.props.questionData.questions.length;
+
+  updateAnswer = event => {
+    this.setState({ answer: event.target.value });
+  };
+
   submitResponse = question => {
-    console.log(question.id);
-    console.log(this.getCurrentQuestionPosition());
     this.props.submitAnswer(question.id, this.state.answer);
-    this.props.history.push(
-      `/question/${
-        this.props.questionData.questions[this.getCurrentQuestionPosition() + 1]
-          .id
-      }`
-    );
+    if (
+      this.getCurrentQuestionPosition() + 1 <
+      this.props.questionData.questions.length
+    ) {
+      this.props.history.push(
+        `/question/${
+          this.props.questionData.questions[
+            this.getCurrentQuestionPosition() + 1
+          ].id
+        }`
+      );
+    } else {
+      this.props.history.push('/survey-success');
+    }
   };
 
   getCurrentQuestion = () => {
