@@ -23,11 +23,13 @@ class Question extends Component {
     this.props.history.goBack();
   };
 
-  getCurrentQuestionPosition = () => {
+  getCurrentQuestionPosition = (questions, id) => {
     let currentPosition = 0;
-    const questions = this.props.questionData.questions;
-    for (let i = 0; i < questions.length; i++) {
-      if (questions[i].id === parseInt(this.props.match.params.id)) {
+    const currentQuestions = questions || this.props.questionData.questions;
+    for (let i = 0; i < currentQuestions.length; i++) {
+      if (
+        currentQuestions[i].id === parseInt(id || this.props.match.params.id)
+      ) {
         currentPosition = i;
         break;
       }
@@ -63,13 +65,30 @@ class Question extends Component {
   };
 
   getCurrentQuestion = () => {
-    const currentQuestion = this.props.questionData.questions.filter(
-      question => {
-        return parseInt(question.id) === parseInt(this.props.match.params.id);
-      }
-    );
-    return currentQuestion[0];
+    const currentQuestion = this.props.questionData.questions[
+      this.getCurrentQuestionPosition()
+    ];
+    return currentQuestion;
   };
+
+  populateAnswer = answer => {
+    this.setState({ answer: answer });
+  };
+
+  componentWillReceiveProps(nextProps) {
+    const currentPosition = this.getCurrentQuestionPosition(
+      nextProps.questionData.questions,
+      nextProps.match.params.id
+    );
+
+    this.populateAnswer(
+      nextProps.questionData.questions[currentPosition].answer
+    );
+  }
+
+  componentWillMount() {
+    this.populateAnswer(this.getCurrentQuestion().answer);
+  }
 
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
@@ -89,7 +108,10 @@ class Question extends Component {
                 <ProgressIndicator percent={this.completedPercent} />
                 <QuestionTypography text={currentQuestion.question} />
                 <AnswerField
-                  field={currentQuestion.fieldProperties}
+                  currentQuestion={{
+                    ...currentQuestion,
+                    answer: this.state.answer
+                  }}
                   updateAnswer={this.updateAnswer}
                 />
                 <CardFooter
