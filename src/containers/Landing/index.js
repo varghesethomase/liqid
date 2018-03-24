@@ -7,7 +7,7 @@ import './Landing.css';
 
 class LandingPage extends Component {
   startSurvey = () => {
-    this.props.history.push(`/questions/${this.props.firstQuestionID}`);
+    this.props.history.push(`/question/${this.props.firstQuestionID}`);
   };
   render() {
     return (
