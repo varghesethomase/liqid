@@ -1,3 +1,5 @@
+import { SUBMIT_ANSWER } from './constants';
+
 const initialState = {
   questionData: {
     currentQuestion: 0,
@@ -64,8 +66,16 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '':
-      return {};
+    case SUBMIT_ANSWER:
+      return {
+        ...state,
+        questionData: {
+          questions: [
+            ...state.questionData.questions,
+            (state.questionData.questions[action.id].answer = action.answer)
+          ]
+        }
+      };
     default:
       return state;
   }
