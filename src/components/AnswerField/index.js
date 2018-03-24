@@ -38,6 +38,7 @@ class AnswerField extends Component {
                 value={option.value}
                 id={option.value}
                 onClick={updateAnswer}
+                checked={answer === option.value}
               />
               <label htmlFor={option.value}>{option.name}</label>
             </div>
