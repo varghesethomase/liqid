@@ -105,7 +105,11 @@ class Question extends Component {
             <Header />
             <div className="question-wrapper">
               <QuestionCard>
-                <ProgressIndicator percent={this.completedPercent} />
+                <ProgressIndicator
+                  percent={this.completedPercent}
+                  currentQuestion={this.getCurrentQuestionPosition() + 1}
+                  totalQuestions={this.props.questionData.questions.length}
+                />
                 <QuestionTypography text={currentQuestion.question} />
                 <AnswerField
                   currentQuestion={{
