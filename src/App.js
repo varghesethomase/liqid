@@ -9,6 +9,9 @@ import './App.css';
 
 const AsyncLanding = asyncComponent(() => import('./containers/Landing'));
 const AsyncQuestion = asyncComponent(() => import('./containers/Question'));
+const AsyncSurveySuccess = asyncComponent(() =>
+  import('./containers/SurveySuccess')
+);
 
 class App extends Component {
   render() {
@@ -18,6 +21,11 @@ class App extends Component {
           <div className="app-wrapper">
             <Route exact path="/" component={AsyncLanding} />
             <Route exact path="/question/:id" component={AsyncQuestion} />
+            <Route
+              exact
+              path="/survey-success"
+              component={AsyncSurveySuccess}
+            />
           </div>
         </ConnectedRouter>
       </Provider>
