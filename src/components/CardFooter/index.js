@@ -1,15 +1,21 @@
 import React from 'react';
-import Button from '../Button';
+import PropTypes from 'prop-types';
 
+import Button from '../Button';
 import './CardFooter.css';
 
 const CardFooter = props => (
   <footer className="clearfix">
     <div className="right">
-      <Button to={props.back}>Back</Button>
-      <Button to={props.next}>Submit</Button>
+      <Button onClick={props.clickBack}>Back</Button>
+      <Button onClick={props.clickSubmit}>Submit</Button>
     </div>
   </footer>
 );
+
+CardFooter.propTypes = {
+  clickBack: PropTypes.func.isRequired,
+  clickSubmit: PropTypes.func.isRequired
+};
 
 export default CardFooter;
