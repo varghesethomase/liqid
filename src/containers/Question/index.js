@@ -30,11 +30,27 @@ class Question extends Component {
     this.setState({ answer: event.target.value });
   };
 
-  submitResponse = () => {
-    const currentQuestion = this.props.match.params.id;
-    this.props.submitAnswer(currentQuestion, this.state.answer);
+  getCurrentQuestionPosition = () => {
+    let currentPosition = 0;
+    const questions = this.props.questionData.questions;
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].id === parseInt(this.props.match.params.id)) {
+        currentPosition = i;
+        break;
+      }
+    }
+    return currentPosition;
+  };
+
+  submitResponse = question => {
+    console.log(question.id);
+    console.log(this.getCurrentQuestionPosition());
+    this.props.submitAnswer(question.id, this.state.answer);
     this.props.history.push(
-      `/question/${this.props.questionData.questions[currentQuestion + 1].id}`
+      `/question/${
+        this.props.questionData.questions[this.getCurrentQuestionPosition() + 1]
+          .id
+      }`
     );
   };
 
@@ -54,11 +70,11 @@ class Question extends Component {
   render() {
     const currentQuestion = this.getCurrentQuestion();
     return (
-      <div>
+      <div className="question-view">
         {this.state.hasError ? (
           <h1 className="text-center error">Oops! Something went wrong!</h1>
         ) : (
-          <div className="question-view">
+          <div>
             <Header />
             <div className="question-wrapper">
               <QuestionCard>
@@ -69,7 +85,7 @@ class Question extends Component {
                   updateAnswer={this.updateAnswer}
                 />
                 <CardFooter
-                  clickSubmit={this.submitResponse}
+                  clickSubmit={() => this.submitResponse(currentQuestion)}
                   clickBack={this.goBack}
                 />
               </QuestionCard>
