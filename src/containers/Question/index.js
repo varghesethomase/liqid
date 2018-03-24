@@ -38,7 +38,7 @@ class Question extends Component {
   };
 
   completedPercent = () =>
-    this.getCurrentQuestionPosition() /
+    (this.getCurrentQuestionPosition() + 1) /
     this.props.questionData.questions.length;
 
   updateAnswer = event => {
@@ -106,7 +106,7 @@ class Question extends Component {
             <div className="question-wrapper">
               <QuestionCard>
                 <ProgressIndicator
-                  percent={this.completedPercent}
+                  progressPercentage={this.completedPercent()}
                   currentQuestion={this.getCurrentQuestionPosition() + 1}
                   totalQuestions={this.props.questionData.questions.length}
                 />
