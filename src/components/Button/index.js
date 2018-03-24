@@ -8,7 +8,7 @@ const Button = props => {
   return (
     <button
       className="button"
-      disabled={props.value === ''}
+      disabled={props.fieldValue === ''}
       onClick={props.buttonClick}
     >
       {props.children}

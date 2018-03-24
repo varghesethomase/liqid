@@ -93,6 +93,7 @@ class Question extends Component {
                   updateAnswer={this.updateAnswer}
                 />
                 <CardFooter
+                  fieldValue={this.state.answer}
                   clickSubmit={() => this.submitResponse(currentQuestion)}
                   clickBack={this.goBack}
                 />

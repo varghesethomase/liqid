@@ -8,7 +8,7 @@ const CardFooter = props => (
   <footer className="clearfix">
     <div className="right">
       <Button buttonClick={props.clickBack}>Back</Button>
-      <Button value={props.value} buttonClick={props.clickSubmit}>
+      <Button fieldValue={props.fieldValue} buttonClick={props.clickSubmit}>
         Submit
       </Button>
     </div>
