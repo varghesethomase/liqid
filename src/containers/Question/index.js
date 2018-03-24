@@ -10,6 +10,9 @@ import CardFooter from '../../components/CardFooter';
 import './Question.css';
 
 class Question extends Component {
+  goBack = () => {
+    this.props.history.goBack();
+  };
   completedPercent = () =>
     this.props.questionData.currentQuestion /
     this.props.questionData.questions.length;
@@ -25,7 +28,7 @@ class Question extends Component {
             <ProgressIndicator percent={this.completedPercent} />
             <QuestionTypography text={currentQuestion.question} />
             <AnswerField field={currentQuestion.fieldProperties} />
-            <CardFooter next="/" back="" />
+            <CardFooter next="/" back={this.goBack} />
           </QuestionCard>
         </div>
       </div>
