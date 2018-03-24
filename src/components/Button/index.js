@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import './Button.css';
 
 const Button = props => (
-  <Link to={props.to} className="button">
+  <a className="button" onClick={props.onClick}>
     {props.children}
-  </Link>
+  </a>
 );
 
 Button.propTypes = {
-  to: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+    .isRequired
 };
 
 export default Button;
