@@ -6,6 +6,10 @@
   top: -20px;
   background-color: #ffffff;
   border-radius: 50%;
+  line-height: 80px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .progress-circle {
@@ -13,4 +17,12 @@
   stroke: #00a562;
   stroke-width: 2;
   stroke-dashoffset: 0;
+}
+
+.svg-box {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
