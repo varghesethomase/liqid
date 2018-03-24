@@ -19,14 +19,14 @@ function renderField(type, options) {
     return (
       <div>
         {options.map(option => (
-          <div>
+          <div key={option.value}>
             <input
               type="radio"
               name={option.name}
               value={option.value}
               id={option.value}
             />
-            <label for={option.value}>{option.name}</label>
+            <label htmlFor={option.value}>{option.name}</label>
           </div>
         ))}
       </div>
@@ -35,7 +35,6 @@ function renderField(type, options) {
 }
 
 const AnswerField = props => {
-  console.log(props);
   return (
     <div className="answer-field-wrapper">
       {renderField(props.field.type, props.field.value)}
