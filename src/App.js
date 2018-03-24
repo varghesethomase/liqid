@@ -17,7 +17,7 @@ class App extends Component {
         <ConnectedRouter history={history}>
           <div className="app-wrapper">
             <Route exact path="/" component={AsyncLanding} />
-            <Route path="/question/:id" component={AsyncQuestion} />
+            <Route exact path="/question/:id" component={AsyncQuestion} />
           </div>
         </ConnectedRouter>
       </Provider>
