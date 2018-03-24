@@ -4,7 +4,7 @@ const initialState = {
     questions: [
       {
         id: 1,
-        question: 'Question 1',
+        question: 'Who are the 3 greatest living musicians?',
         fieldProperties: {
           type: 'text',
           label: 'Placeholder text',
@@ -14,18 +14,22 @@ const initialState = {
       },
       {
         id: 2,
-        question: 'Question 2',
+        question: 'If you could time travel, where would you go?',
         fieldProperties: {
           type: 'dropdown',
           label: 'Placeholder text',
           value: [
             {
-              name: 'Alphabets',
-              value: 'az'
+              name: 'India',
+              value: 'IN'
             },
             {
-              name: 'Animals',
-              value: 'mongoose'
+              name: 'Germany',
+              value: 'DE'
+            },
+            {
+              name: 'Netherlands',
+              value: 'NE'
             }
           ]
         },
@@ -33,18 +37,22 @@ const initialState = {
       },
       {
         id: 3,
-        question: 'Question 3',
+        question: 'If you could be great at one sport which would you choose?',
         fieldProperties: {
           type: 'radiobutton',
           label: 'Placeholder text',
           value: [
             {
-              name: 'Alphabets',
-              value: 'az'
+              name: 'Athletics',
+              value: 'ATL'
             },
             {
-              name: 'Animals',
-              value: 'mongoose'
+              name: 'Cricket',
+              value: 'CRI'
+            },
+            {
+              name: 'Football',
+              value: 'FBALL'
             }
           ]
         },
