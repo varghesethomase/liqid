@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import Button from '../../components/Button';
 import './Landing.css';
@@ -26,4 +27,4 @@ const mapStateToProps = state => ({
   firstQuestionID: state.question.questionData.questions[0].id
 });
 
-export default connect(mapStateToProps, null)(LandingPage);
+export default connect(mapStateToProps, null)(withRouter(LandingPage));
