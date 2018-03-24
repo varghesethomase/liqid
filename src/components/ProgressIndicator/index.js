@@ -4,7 +4,8 @@ import './ProgressIndicator.css';
 
 const ProgressIndicator = props => (
   <div className="progress">
-    <svg viewBox="0 0 50 50">
+    {props.currentQuestion} / {props.totalQuestions}
+    <svg viewBox="0 0 50 50" className="svg-box">
       <circle
         className="progress-circle"
         cx="25"
