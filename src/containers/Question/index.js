@@ -15,7 +15,8 @@ class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answer: ''
+      answer: '',
+      hasError: false
     };
   }
   goBack = () => {
@@ -23,42 +24,58 @@ class Question extends Component {
   };
 
   completedPercent = () =>
-    this.props.questionData.currentQuestion /
-    this.props.questionData.questions.length;
+    this.props.match.params.id / this.props.questionData.questions.length;
 
   updateAnswer = event => {
     this.setState({ answer: event.target.value });
   };
 
   submitResponse = () => {
-    const currentQuestion = this.props.questionData.currentQuestion;
+    const currentQuestion = this.props.match.params.id;
     this.props.submitAnswer(currentQuestion, this.state.answer);
     this.props.history.push(
       `/question/${this.props.questionData.questions[currentQuestion + 1].id}`
     );
   };
 
+  getCurrentQuestion = () => {
+    const currentQuestion = this.props.questionData.questions.filter(
+      question => {
+        return parseInt(question.id) === parseInt(this.props.match.params.id);
+      }
+    );
+    return currentQuestion[0];
+  };
+
+  componentDidCatch(error, info) {
+    this.setState({ hasError: true });
+  }
+
   render() {
-    const { questionData } = this.props;
-    const currentQuestion =
-      questionData.questions[questionData.currentQuestion];
+    const currentQuestion = this.getCurrentQuestion();
     return (
-      <div className="question-view">
-        <Header />
-        <div className="question-wrapper">
-          <QuestionCard>
-            <ProgressIndicator percent={this.completedPercent} />
-            <QuestionTypography text={currentQuestion.question} />
-            <AnswerField
-              field={currentQuestion.fieldProperties}
-              updateAnswer={this.updateAnswer}
-            />
-            <CardFooter
-              clickSubmit={this.submitResponse}
-              clickBack={this.goBack}
-            />
-          </QuestionCard>
-        </div>
+      <div>
+        {this.state.hasError ? (
+          <h1 className="text-center error">Oops! Something went wrong!</h1>
+        ) : (
+          <div className="question-view">
+            <Header />
+            <div className="question-wrapper">
+              <QuestionCard>
+                <ProgressIndicator percent={this.completedPercent} />
+                <QuestionTypography text={currentQuestion.question} />
+                <AnswerField
+                  field={currentQuestion.fieldProperties}
+                  updateAnswer={this.updateAnswer}
+                />
+                <CardFooter
+                  clickSubmit={this.submitResponse}
+                  clickBack={this.goBack}
+                />
+              </QuestionCard>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
