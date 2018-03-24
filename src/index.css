@@ -17,6 +17,9 @@ body {
 .right {
   float: right;
 }
+.text-center {
+  text-align: center;
+}
 .clearfix:after {
   visibility: hidden;
   display: block;
