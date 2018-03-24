@@ -15,7 +15,7 @@ class LandingPage extends Component {
         <div className="content">
           <h1>Simple Survey</h1>
           <div>
-            <Button onClick={this.startSurvey}>START SURVEY</Button>
+            <Button buttonClick={this.startSurvey}>START SURVEY</Button>
           </div>
         </div>
       </div>

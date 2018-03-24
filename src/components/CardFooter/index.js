@@ -7,8 +7,10 @@ import './CardFooter.css';
 const CardFooter = props => (
   <footer className="clearfix">
     <div className="right">
-      <Button onClick={props.clickBack}>Back</Button>
-      <Button onClick={props.clickSubmit}>Submit</Button>
+      <Button buttonClick={props.clickBack}>Back</Button>
+      <Button value={props.value} buttonClick={props.clickSubmit}>
+        Submit
+      </Button>
     </div>
   </footer>
 );
