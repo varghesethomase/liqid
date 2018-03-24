@@ -5,13 +5,13 @@ import './AnswerField.css';
 
 class AnswerField extends Component {
   renderField = () => {
-    const { field: { type, options }, updateAnswer } = this.props;
+    const { field: { type, values }, updateAnswer } = this.props;
     if (type === 'text') {
       return <textarea className="answer-text-field" onChange={updateAnswer} />;
     } else if (type === 'dropdown') {
       return (
         <select onChange={updateAnswer}>
-          {options.map(option => (
+          {values.map(option => (
             <option value={option.value} key={option.value}>
               {option.name}
             </option>
@@ -21,7 +21,7 @@ class AnswerField extends Component {
     } else if (type === 'radiobutton') {
       return (
         <div>
-          {options.map(option => (
+          {values.map(option => (
             <div key={option.value}>
               <input
                 type="radio"
