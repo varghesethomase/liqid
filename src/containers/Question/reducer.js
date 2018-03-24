@@ -1,26 +1,25 @@
-import { SUBMIT_ANSWER } from './constants';
+import { SUBMIT_ANSWER, SET_CURRENT_QUESTION } from './constants';
 
 const initialState = {
   questionData: {
-    currentQuestion: 0,
     questions: [
       {
-        id: 1,
+        id: 1010,
         question: 'Who are the 3 greatest living musicians?',
         fieldProperties: {
           type: 'text',
           label: 'Placeholder text',
-          value: ''
+          values: ''
         },
         answer: ''
       },
       {
-        id: 2,
+        id: 1011,
         question: 'If you could time travel, where would you go?',
         fieldProperties: {
           type: 'dropdown',
           label: 'Placeholder text',
-          value: [
+          values: [
             {
               name: 'India',
               value: 'IN'
@@ -38,12 +37,12 @@ const initialState = {
         answer: ''
       },
       {
-        id: 3,
+        id: 1012,
         question: 'If you could be great at one sport which would you choose?',
         fieldProperties: {
           type: 'radiobutton',
           label: 'Placeholder text',
-          value: [
+          values: [
             {
               name: 'Athletics',
               value: 'ATL'
@@ -64,18 +63,30 @@ const initialState = {
   }
 };
 
+function updateQuestions(questions, action) {
+  const updatedQuestions = questions.map((question, i) => {
+    if (action.id === question.id) {
+      return {
+        ...question,
+        answer: action.answer
+      };
+    } else {
+      return question;
+    }
+  });
+  return updatedQuestions;
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_ANSWER:
       return {
         ...state,
         questionData: {
-          questions: [
-            ...state.questionData.questions,
-            (state.questionData.questions[action.id].answer = action.answer)
-          ]
+          questions: updateQuestions(state.questionData.questions, action)
         }
       };
+      break;
     default:
       return state;
   }
