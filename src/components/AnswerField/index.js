@@ -25,7 +25,7 @@ class AnswerField extends Component {
             <div key={option.value}>
               <input
                 type="radio"
-                name={option.name}
+                name="survey-question"
                 value={option.value}
                 id={option.value}
                 onClick={updateAnswer}
