@@ -7,3 +7,17 @@ body {
   height: 100%;
   overflow-y: auto;
 }
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
