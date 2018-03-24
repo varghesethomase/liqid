@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Button from '../../components/Button';
 import './Landing.css';
 
 class LandingPage extends Component {
+  startSurvey = () => {
+    this.props.history.push(`/questions/${this.props.firstQuestionID}`);
+  };
   render() {
     return (
       <div className="landing-screen">
         <div className="content">
           <h1>Simple Survey</h1>
           <div>
-            <Button to="/question/1">START SURVEY</Button>
+            <Button onClick={this.startSurvey}>START SURVEY</Button>
           </div>
         </div>
       </div>
@@ -17,4 +22,8 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+const mapStateToProps = state => ({
+  firstQuestionID: state.question.questionData.questions[0].id
+});
+
+export default connect(mapStateToProps, null)(LandingPage);
