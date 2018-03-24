@@ -15,6 +15,22 @@ function renderField(type, options) {
         ))}
       </select>
     );
+  } else if (type === 'radiobutton') {
+    return (
+      <div>
+        {options.map(option => (
+          <div>
+            <input
+              type="radio"
+              name={option.name}
+              value={option.value}
+              id={option.value}
+            />
+            <label for={option.value}>{option.name}</label>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 
