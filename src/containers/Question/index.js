@@ -6,6 +6,7 @@ import QuestionCard from '../../components/QuestionCard';
 import ProgressIndicator from '../../components/ProgressIndicator';
 import QuestionTypography from '../../components/QuestionTypography';
 import AnswerField from '../../components/AnswerField';
+import CardFooter from '../../components/CardFooter';
 import './Question.css';
 
 class Question extends Component {
@@ -24,6 +25,7 @@ class Question extends Component {
             <ProgressIndicator percent={this.completedPercent} />
             <QuestionTypography text={currentQuestion.question} />
             <AnswerField field={currentQuestion.fieldProperties} />
+            <CardFooter next="/" back="" />
           </QuestionCard>
         </div>
       </div>
