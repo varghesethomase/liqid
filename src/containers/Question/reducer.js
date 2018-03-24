@@ -1,4 +1,4 @@
-import { SUBMIT_ANSWER, SET_CURRENT_QUESTION } from './constants';
+import { SUBMIT_ANSWER } from './constants';
 
 const initialState = {
   questionData: {
@@ -86,7 +86,6 @@ export default (state = initialState, action) => {
           questions: updateQuestions(state.questionData.questions, action)
         }
       };
-      break;
     default:
       return state;
   }
