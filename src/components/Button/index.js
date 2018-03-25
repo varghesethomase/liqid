@@ -14,14 +14,16 @@ const Button = props => (
 );
 
 Button.defaultProps = {
-  className: ''
+  className: '',
+  fieldValue: '',
 };
 
 Button.propTypes = {
   buttonClick: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
     .isRequired,
-  className: PropTypes.string.isRequired
+  className: PropTypes.string,
+  fieldValue: PropTypes.string,
 };
 
 export default Button;
