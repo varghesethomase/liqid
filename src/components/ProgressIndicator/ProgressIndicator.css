@@ -27,3 +27,12 @@
   right: 0px;
   transform: rotate(-90deg);
 }
+
+@media screen and (max-width: 850px) {
+  .progress {
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -40px;
+  }
+}
