@@ -15,7 +15,7 @@ const Button = props => (
 
 Button.defaultProps = {
   className: '',
-  fieldValue: '',
+  fieldValue: null,
 };
 
 Button.propTypes = {
