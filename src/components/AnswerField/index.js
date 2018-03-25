@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import './AnswerField.css';
 
 class AnswerField extends Component {
-  renderField = () => {
+  constructor(props) {
+    super(props);
+    this.renderField = this.renderField.bind(this);
+  }
+
+  renderField() {
     const {
       currentQuestion: { answer, fieldProperties: { type, values } },
       updateAnswer
@@ -32,21 +37,23 @@ class AnswerField extends Component {
         <div>
           {values.map(option => (
             <div key={option.value}>
-              <input
-                type="radio"
-                name="survey-question"
-                value={option.value}
-                id={option.value}
-                onClick={updateAnswer}
-                checked={answer === option.value}
-              />
-              <label htmlFor={option.value}>{option.name}</label>
+              <label htmlFor={option.value}>
+                <input
+                  type="radio"
+                  name="survey-question"
+                  value={option.value}
+                  id={option.value}
+                  onClick={updateAnswer}
+                  checked={answer === option.value}
+                />
+                {option.name}
+              </label>
             </div>
           ))}
         </div>
       );
     }
-  };
+  }
 
   render() {
     return <div className="answer-field-wrapper">{this.renderField()}</div>;
