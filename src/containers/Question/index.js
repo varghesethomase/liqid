@@ -19,6 +19,13 @@ class Question extends Component {
       answer: '',
       hasError: false,
     };
+    this.navigateBack = this.navigateBack.bind(this);
+    this.getCurrentQuestionPosition = this.getCurrentQuestionPosition.bind(this);
+    this.getCurrentQuestion = this.getCurrentQuestion.bind(this);
+    this.submitResponse = this.submitResponse.bind(this);
+    this.updateAnswer = this.updateAnswer.bind(this);
+    this.completedPercent = this.completedPercent.bind(this);
+    this.populateAnswer = this.populateAnswer.bind(this);
   }
 
   componentWillMount() {
@@ -80,7 +87,7 @@ class Question extends Component {
     this.props.questionData.questions.length;
   }
 
-  goBack() {
+  navigateBack() {
     this.props.history.goBack();
   }
 
@@ -100,7 +107,7 @@ class Question extends Component {
           <h1 className="text-center error">Oops! Something went wrong!</h1>
         ) : (
           <div>
-            <Header />
+            <Header goBack={this.navigateBack} />
             <div className="question-wrapper">
               <QuestionCard>
                 <ProgressIndicator
@@ -119,7 +126,7 @@ class Question extends Component {
                 <CardFooter
                   fieldValue={this.state.answer}
                   clickSubmit={() => this.submitResponse(currentQuestion)}
-                  clickBack={this.goBack}
+                  clickBack={this.navigateBack}
                 />
               </QuestionCard>
             </div>
