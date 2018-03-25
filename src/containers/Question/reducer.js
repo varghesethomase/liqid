@@ -9,9 +9,9 @@ const initialState = {
         fieldProperties: {
           type: 'text',
           label: 'Placeholder text',
-          values: ''
+          values: '',
         },
-        answer: ''
+        answer: '',
       },
       {
         id: 1011,
@@ -22,19 +22,19 @@ const initialState = {
           values: [
             {
               name: 'India',
-              value: 'IN'
+              value: 'IN',
             },
             {
               name: 'Germany',
-              value: 'DE'
+              value: 'DE',
             },
             {
               name: 'Netherlands',
-              value: 'NE'
-            }
-          ]
+              value: 'NE',
+            },
+          ],
         },
-        answer: ''
+        answer: '',
       },
       {
         id: 1012,
@@ -45,34 +45,33 @@ const initialState = {
           values: [
             {
               name: 'Athletics',
-              value: 'ATL'
+              value: 'ATL',
             },
             {
               name: 'Cricket',
-              value: 'CRI'
+              value: 'CRI',
             },
             {
               name: 'Football',
-              value: 'FBALL'
-            }
-          ]
+              value: 'FBALL',
+            },
+          ],
         },
-        answer: ''
-      }
-    ]
-  }
+        answer: '',
+      },
+    ],
+  },
 };
 
 function updateQuestions(questions, action) {
-  const updatedQuestions = questions.map((question, i) => {
+  const updatedQuestions = questions.map((question) => {
     if (action.id === question.id) {
       return {
         ...question,
-        answer: action.answer
+        answer: action.answer,
       };
-    } else {
-      return question;
     }
+    return question;
   });
   return updatedQuestions;
 }
@@ -83,8 +82,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         questionData: {
-          questions: updateQuestions(state.questionData.questions, action)
-        }
+          questions: updateQuestions(state.questionData.questions, action),
+        },
       };
     default:
       return state;
