@@ -21,9 +21,14 @@ const CardFooter = props => (
   </footer>
 );
 
+CardFooter.defaultProps = {
+  fieldValue: '',
+};
+
 CardFooter.propTypes = {
+  fieldValue: PropTypes.string,
   clickBack: PropTypes.func.isRequired,
-  clickSubmit: PropTypes.func.isRequired
+  clickSubmit: PropTypes.func.isRequired,
 };
 
 export default CardFooter;
