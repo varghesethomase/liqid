@@ -9,7 +9,7 @@ const initialState = {
         fieldProperties: {
           type: 'text',
           label: 'Placeholder text',
-          values: '',
+          values: [],
         },
         answer: '',
       },
@@ -56,6 +56,43 @@ const initialState = {
               value: 'FBALL',
             },
           ],
+        },
+        answer: '',
+      },
+      {
+        id: 1013,
+        question: 'What types of credit cards do you have (Select all that apply)?',
+        fieldProperties: {
+          type: 'radiobutton',
+          label: 'Placeholder text',
+          values: [
+            {
+              name: 'Visa',
+              value: 'VISA',
+            },
+            {
+              name: 'Master Card',
+              value: 'MC',
+            },
+            {
+              name: 'American Express',
+              value: 'AE',
+            },
+            {
+              name: 'Diners Club',
+              value: 'DC',
+            },
+          ],
+        },
+        answer: '',
+      },
+      {
+        id: 1015,
+        question: 'What is your opinion on Brexit',
+        fieldProperties: {
+          type: 'text',
+          label: 'Placeholder text',
+          values: [],
         },
         answer: '',
       },
