@@ -9,6 +9,12 @@ import QuestionTypography from '../../components/QuestionTypography';
 import './SurveySuccess.css';
 
 class SurveySuccess extends Component {
+  static getAnswer(question) {
+    if (question.fieldProperties.type === 'text') {
+      return question.answer;
+    }
+    return question.fieldProperties.values.filter(value => value.value === question.answer)[0].name;
+  }
   constructor(props) {
     super(props);
     this.navigateBack = this.navigateBack.bind(this);
@@ -25,7 +31,7 @@ class SurveySuccess extends Component {
           {questions.map(question => (
             <Card className="survey-success-card" key={question.id}>
               <QuestionTypography text={question.question} />
-              <div className="answer">{question.answer}</div>
+              <div className="answer">{SurveySuccess.getAnswer(question)}</div>
             </Card>
           ))}
         </div>
