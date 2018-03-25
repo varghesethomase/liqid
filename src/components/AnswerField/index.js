@@ -11,8 +11,11 @@ class AnswerField extends Component {
 
   renderField() {
     const {
-      currentQuestion: { answer, fieldProperties: { type, values } },
-      updateAnswer
+      currentQuestion: {
+        answer,
+        fieldProperties: { type, values },
+      },
+      updateAnswer,
     } = this.props;
     if (type === 'text') {
       return (
@@ -53,6 +56,7 @@ class AnswerField extends Component {
         </div>
       );
     }
+    return (null);
   }
 
   render() {
@@ -62,7 +66,7 @@ class AnswerField extends Component {
 
 AnswerField.propTypes = {
   currentQuestion: PropTypes.object.isRequired,
-  updateAnswer: PropTypes.func.isRequired
+  updateAnswer: PropTypes.func.isRequired,
 };
 
 export default AnswerField;
