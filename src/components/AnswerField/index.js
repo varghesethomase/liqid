@@ -47,7 +47,7 @@ class AnswerField extends Component {
                   value={option.value}
                   id={option.value}
                   onClick={updateAnswer}
-                  checked={answer === option.value}
+                  defaultChecked={answer === option.value}
                 />
                 {option.name}
               </label>
