@@ -35,7 +35,7 @@ const mapStateToProps = state => ({
 });
 
 LandingPage.propTypes = {
-  firstQuestionID: PropTypes.string.isRequired,
+  firstQuestionID: PropTypes.number.isRequired,
   history: PropTypes.object.isRequired,
 };
 
