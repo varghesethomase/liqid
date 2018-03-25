@@ -4,5 +4,5 @@ import questionReducer from './containers/Question/reducer';
 
 export default combineReducers({
   routing: routerReducer,
-  question: questionReducer
+  question: questionReducer,
 });
