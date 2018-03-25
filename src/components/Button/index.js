@@ -3,17 +3,15 @@ import PropTypes from 'prop-types';
 
 import './Button.css';
 
-const Button = props => {
-  return (
-    <button
-      className="button"
-      disabled={props.fieldValue === ''}
-      onClick={props.buttonClick}
-    >
-      {props.children}
-    </button>
-  );
-};
+const Button = props => (
+  <button
+    className={`button ${props.className}`}
+    disabled={props.fieldValue === ''}
+    onClick={props.buttonClick}
+  >
+    {props.children}
+  </button>
+);
 
 Button.propTypes = {
   buttonClick: PropTypes.func.isRequired,
