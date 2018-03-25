@@ -1,5 +1,5 @@
 .button {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 4px;
   display: inline-block;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -22,4 +22,9 @@
 
 .button.no-transform {
   transform: none;
+}
+
+.button.flat {
+  box-shadow: none;
+  background-color: #f9f9f9;
 }
