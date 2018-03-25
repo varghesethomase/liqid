@@ -18,7 +18,7 @@
     "typeface-roboto": "^0.0.45"
   },
   "lint-staged": {
-    "*.js": "lint:eslint",
+    "*.js": "eslint --ignore-path .gitignore",
     "*.css": "stylelint"
   },
   "scripts": {
@@ -26,8 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "lint:eslint": "eslint --ignore-path .gitignore"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
