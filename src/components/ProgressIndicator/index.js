@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import './ProgressIndicator.css';
 
 const ProgressIndicator = props => (
-  <div className="progress">
+  <div className="progress-indicator">
     {props.currentQuestion} / {props.totalQuestions}
-    <svg viewBox="0 0 50 50" className="svg-box">
+    <svg viewBox="0 0 50 50" className="progress-indicator__svg-box">
       <circle
-        className="progress-circle"
+        className="progress-indicator__circle"
         cx="25"
         cy="25"
         r="22"
