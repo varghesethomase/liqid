@@ -18,8 +18,8 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="landing-screen">
-        <div className="content">
+      <div className="landing-view">
+        <div className="landing-view-content">
           <h1>Simple Survey</h1>
           <div>
             <Button buttonClick={this.startSurvey}>START SURVEY</Button>
