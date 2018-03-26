@@ -1,11 +1,11 @@
 .card {
+  position: relative;
   width: 600px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 30px 30px 15px;
   margin: auto;
   margin-bottom: 15px;
-  position: relative;
+  padding: 30px 30px 15px;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 600px) {
