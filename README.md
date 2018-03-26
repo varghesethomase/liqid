@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Setting up tools
+  1. Install `yarn`. Instructions can be found [here](https://yarnpkg.com/lang/en/docs/install/)
+
 ## Steps to get it running
   1. `yarn install` in the root of the project
   2. `yarn start` to run in development mode
@@ -14,6 +17,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   6. Following Smart/Dump component approach in designing components
   7. Saving to localhost to restore data at any point
   8. Typechecking with PropTypes
-  
+
   ## Lighthouse report
   ![alt text](https://raw.githubusercontent.com/varghesethomase/liqid/master/public/images/lighthouse-report.png)
+
+  This report is generated using Chrome browser. You can find a step by step instruction on how to generate it [here](https://developers.google.com/web/tools/lighthouse/#devtools)
