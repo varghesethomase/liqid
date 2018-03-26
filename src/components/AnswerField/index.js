@@ -20,7 +20,7 @@ class AnswerField extends Component {
     if (type === 'text') {
       return (
         <textarea
-          className="answer-text-field"
+          className="answer-field__text-field"
           onChange={updateAnswer}
           value={answer}
         />
@@ -60,7 +60,7 @@ class AnswerField extends Component {
   }
 
   render() {
-    return <div className="answer-field-wrapper">{this.renderField()}</div>;
+    return <div className="answer-field">{this.renderField()}</div>;
   }
 }
 
