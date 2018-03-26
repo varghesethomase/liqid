@@ -5,7 +5,7 @@ import Button from '../Button';
 import './CardFooter.css';
 
 const CardFooter = props => (
-  <footer className="clearfix">
+  <footer className="clearfix card-footer">
     <div className="right">
       <Button buttonClick={props.clickBack} className="button--no-transform button--flat">
         BACK

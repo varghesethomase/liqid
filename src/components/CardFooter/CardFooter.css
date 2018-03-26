@@ -1,7 +1,7 @@
-footer {
+.card-footer {
   padding: 20px 0 0;
 }
 
-footer .button:first-child {
+.card-footer .button:first-child {
   margin-right: 10px;
 }
