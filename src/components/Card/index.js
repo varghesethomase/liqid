@@ -16,6 +16,7 @@ Card.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.element,
+    PropTypes.string,
   ]).isRequired,
 };
 
