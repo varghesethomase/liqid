@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import MaterialRadioButton from '../MaterialRadioButton';
 import './AnswerField.css';
 
 class AnswerField extends Component {
@@ -40,17 +40,13 @@ class AnswerField extends Component {
         <div>
           {values.map(option => (
             <div key={option.value}>
-              <label htmlFor={option.value}>
-                <input
-                  type="radio"
-                  name="survey-question"
-                  value={option.value}
-                  id={option.value}
-                  onClick={updateAnswer}
-                  defaultChecked={answer === option.value}
-                />
-                {option.name}
-              </label>
+              <MaterialRadioButton
+                value={option.value}
+                label={option.name}
+                name="survey-question"
+                buttonClick={updateAnswer}
+                defaultChecked={answer === option.value}
+              />
             </div>
           ))}
         </div>
