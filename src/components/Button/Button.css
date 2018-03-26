@@ -20,16 +20,16 @@
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-.button.no-transform {
+.button--no-transform {
   transform: none;
 }
 
-.button.flat {
+.button--flat {
   background-color: #f9f9f9;
   box-shadow: none;
 }
 
-.button.success {
+.button--success {
   background-color: #00a562;
   color: #fff;
 }
