@@ -1,37 +1,30 @@
 .navbar {
+  box-sizing: border-box;
   height: 60px;
   background-color: #fff;
-  box-sizing: border-box;
-}
-
-.navbar.fixed {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
 }
 
 .navbar .brand {
   display: table;
-  margin: 0;
   height: 100%;
+  margin: 0;
   padding-left: 0;
 }
 
 .navbar .brand li {
   display: table-cell;
-  vertical-align: middle;
-  list-style-type: none;
   height: 100%;
+  list-style-type: none;
+  vertical-align: middle;
 }
 
 .navbar .navigation button {
-  cursor: pointer;
-  padding-left: 15px;
-  background: #fff;
-  border: 0;
   width: 100%;
   height: 100%;
+  padding-left: 15px;
+  border: 0;
+  background: #fff;
+  cursor: pointer;
 }
 
 .navbar .navigation button:hover {
