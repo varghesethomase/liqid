@@ -29,7 +29,7 @@ class SurveySuccess extends Component {
         <Header goBack={this.navigateBack} />
         <div className="survey-success-wrapper">
           {questions.map(question => (
-            <Card className="survey-success-card" key={question.id}>
+            <Card className="card--survey-success" key={question.id}>
               <QuestionTypography text={question.question} />
               <div className="answer">{SurveySuccess.getAnswer(question)}</div>
             </Card>
