@@ -5,13 +5,13 @@ import './Header.css';
 
 const Header = props => (
   <nav className="navbar">
-    <ul className="brand">
-      <li className="navigation">
+    <ul className="navbar__brand">
+      <li className="navbar__navigation">
         <button onClick={props.goBack}>
           <img src="/images/arrow-back.png" alt="back" />
         </button>
       </li>
-      <li className="logo">Simple Survey</li>
+      <li className="navbar__logo">Simple Survey</li>
     </ul>
   </nav>
 );
