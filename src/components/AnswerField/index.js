@@ -27,7 +27,7 @@ class AnswerField extends Component {
       );
     } else if (type === 'dropdown') {
       return (
-        <select onChange={updateAnswer} value={answer}>
+        <select onChange={updateAnswer} value={answer} className="answer-field__select">
           {values.map(option => (
             <option value={option.value} key={option.value}>
               {option.name}
