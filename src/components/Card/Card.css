@@ -8,6 +8,10 @@
   background-color: #fff;
 }
 
+.card--survey-success {
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 600px) {
   .card {
     width: 94%;
