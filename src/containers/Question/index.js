@@ -108,7 +108,7 @@ class Question extends Component {
         ) : (
           <div>
             <Header goBack={this.navigateBack} />
-            <div className="question-wrapper">
+            <div className="question-card-wrapper">
               <QuestionCard>
                 <ProgressIndicator
                   progressPercentage={this.completedPercent()}
