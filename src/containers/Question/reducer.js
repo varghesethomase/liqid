@@ -96,6 +96,43 @@ const initialState = {
         },
         answer: '',
       },
+      {
+        id: 1016,
+        question: 'Which season do you like the most?',
+        fieldProperties: {
+          type: 'dropdown',
+          label: 'Placeholder text',
+          values: [
+            {
+              name: 'Spring',
+              value: 'SPR',
+            },
+            {
+              name: 'Autumn',
+              value: 'AUT',
+            },
+            {
+              name: 'Monsoon',
+              value: 'MON',
+            },
+            {
+              name: 'Summer',
+              value: 'SUM',
+            },
+          ],
+        },
+        answer: '',
+      },
+      {
+        id: 1017,
+        question: 'Do you like spicy food and why?',
+        fieldProperties: {
+          type: 'text',
+          label: 'Placeholder text',
+          values: [],
+        },
+        answer: '',
+      },
     ],
   },
 };
