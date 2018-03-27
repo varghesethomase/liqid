@@ -48,9 +48,9 @@ class SurveySuccess extends Component {
               <div className="answer">{SurveySuccess.getAnswer(question)}</div>
             </Card>
           ))}
-        </div>
-        <div className="text-center">
-          <Button buttonClick={this.resetForm}>RESET FORM</Button>
+          <div className="text-center">
+            <Button buttonClick={this.resetForm}>RESET FORM</Button>
+          </div>
         </div>
       </React.Fragment>
     );
