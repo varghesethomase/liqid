@@ -22,7 +22,7 @@ class LandingPage extends Component {
         <div className="landing-view-content">
           <h1>Simple Survey</h1>
           <div>
-            <Button buttonClick={this.startSurvey}>START SURVEY</Button>
+            <Button buttonClick={this.startSurvey} className="button--large">START SURVEY</Button>
           </div>
         </div>
       </div>

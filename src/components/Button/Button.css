@@ -16,12 +16,12 @@
 }
 
 .button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.3), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-.button--no-transform:hover {
-  transform: none;
+.button--large {
+  height: 50px;
+  padding: 5px 15px;
 }
 
 .button--flat {

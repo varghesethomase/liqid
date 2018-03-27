@@ -7,13 +7,13 @@ import './CardFooter.css';
 const CardFooter = props => (
   <footer className="clearfix card-footer">
     <div className="right">
-      <Button buttonClick={props.clickBack} className="button--no-transform button--flat">
+      <Button buttonClick={props.clickBack} className="button--flat">
         BACK
       </Button>
       <Button
         fieldValue={props.fieldValue}
         buttonClick={props.clickSubmit}
-        className="button--no-transform button--success"
+        className="button--success"
       >
         SUBMIT
       </Button>
