@@ -10,6 +10,7 @@
 
 .card--survey-success {
   border-radius: 5px;
+  padding-top: 15px;
 }
 
 @media screen and (max-width: 600px) {
