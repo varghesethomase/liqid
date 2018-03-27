@@ -37,3 +37,7 @@
   background-color: #00a562;
   color: #fff;
 }
+
+.button:disabled {
+  background-color: #024e2f;
+}
