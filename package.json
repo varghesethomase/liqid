@@ -2,6 +2,11 @@
   "name": "simple-survey",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name" : "Varghese Thomas",
+    "email" : "hello@varghese.me",
+    "url" : "https://blog.varghese.me"
+  },
   "dependencies": {
     "history": "^4.7.2",
     "husky": "^0.14.3",
